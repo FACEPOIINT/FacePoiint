@@ -5,15 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".TELA_REGISTRAR">
-
-    <Button
-        android:id="@+id/autenticação"
-        android:layout_width="117dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="420dp"
-        android:text="autenticação"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".TELA_REGISTRAR"/>

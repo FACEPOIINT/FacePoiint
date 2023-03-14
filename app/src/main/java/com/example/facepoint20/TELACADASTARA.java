@@ -1,5 +1,6 @@
 package com.example.facepoint20;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,6 +18,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 
 public class TELACADASTARA extends AppCompatActivity {
@@ -24,6 +32,7 @@ public class TELACADASTARA extends AppCompatActivity {
     public ListView listTest;
     public EditText cadastroNome, idusuario ,departamento ;
     public Button botaoCadastro;
+    String[] mensagens = {"preencha todos os campos", "Cadastro realizado com sucesso"};
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,9 +48,24 @@ public class TELACADASTARA extends AppCompatActivity {
 
         botaoCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                cadastrar();
-                abrirJanela();
+            public void onClick(View v) {
+
+                cadastrarFire(v);
+            }
+        });
+    }
+    public void cadastrarFire(View v){
+        String email = cadastroNome.getText().toString();
+        String senha = idusuario.getText().toString();
+        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Snackbar snackbar = Snackbar.make(v,mensagens[1],Snackbar.LENGTH_LONG);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+                }
             }
         });
     }
