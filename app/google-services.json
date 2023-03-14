@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "541244162084",
+    "project_id": "testefacepoiint",
+    "storage_bucket": "testefacepoiint.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541244162084:android:3371ea1d90785036a658b1",
+        "android_client_info": {
+          "package_name": "com.example.facepoint20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541244162084-lv9n3533elqrr2b8gppvr43p5rqpb6vn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHtn8LM6ZkDlnSPvtaU3DPCRUhyIDebc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541244162084-lv9n3533elqrr2b8gppvr43p5rqpb6vn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
